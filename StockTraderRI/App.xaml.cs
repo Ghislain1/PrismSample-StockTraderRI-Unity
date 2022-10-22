@@ -33,6 +33,7 @@ namespace StockTraderRI
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
             // Load modules using code
+            moduleCatalog.AddModule<StockTraderRI.Modules.Market.MarketModule>();
             moduleCatalog.AddModule<StockTraderRI.Modules.Watch.WatchModule>();
 
         }
