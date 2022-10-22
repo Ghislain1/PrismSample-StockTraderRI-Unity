@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockTraderRI", "StockTraderRI\StockTraderRI.csproj", "{910FBE96-628F-472F-A5EA-A37D60B7109C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockTraderRI.Modules.Watch", "StockTraderRI.Modules.Watch\StockTraderRI.Modules.Watch.csproj", "{FDD46788-0646-417E-901C-740601D0D44F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{910FBE96-628F-472F-A5EA-A37D60B7109C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{910FBE96-628F-472F-A5EA-A37D60B7109C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{910FBE96-628F-472F-A5EA-A37D60B7109C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDD46788-0646-417E-901C-740601D0D44F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDD46788-0646-417E-901C-740601D0D44F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDD46788-0646-417E-901C-740601D0D44F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDD46788-0646-417E-901C-740601D0D44F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
