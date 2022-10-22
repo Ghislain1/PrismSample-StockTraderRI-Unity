@@ -21,6 +21,6 @@ namespace StockTraderRI
     public partial class Shell : Window
     {
         public Shell() => this.InitializeComponent();
-        
+
     }
 }

@@ -7,6 +7,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockTraderRI", "StockTrade
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockTraderRI.Modules.Watch", "StockTraderRI.Modules.Watch\StockTraderRI.Modules.Watch.csproj", "{FDD46788-0646-417E-901C-740601D0D44F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockTraderRI.Infrastructure", "StockTraderRI.Infrastructure\StockTraderRI.Infrastructure.csproj", "{AA127836-4CED-47B0-B767-47B8C25544BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockTraderRI.ChartControls", "StockTraderRI.ChartControls\StockTraderRI.ChartControls.csproj", "{50FBB942-C923-49C0-9E9E-A21E74D20340}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockTraderRI.Modules.Market", "StockTraderRI.Modules.Market\StockTraderRI.Modules.Market.csproj", "{C7A02584-CBCB-4216-AE6B-70B621DC3C61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockTraderRI.Modules.News", "StockTraderRI.Modules.News\StockTraderRI.Modules.News.csproj", "{6816AECE-27BE-4878-A889-A5E9557456B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockTraderRI.Modules.Position", "StockTraderRI.Modules.Position\StockTraderRI.Modules.Position.csproj", "{38F959AE-5526-4238-AC57-5AD5F638302B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +31,26 @@ Global
 		{FDD46788-0646-417E-901C-740601D0D44F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDD46788-0646-417E-901C-740601D0D44F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDD46788-0646-417E-901C-740601D0D44F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA127836-4CED-47B0-B767-47B8C25544BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA127836-4CED-47B0-B767-47B8C25544BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA127836-4CED-47B0-B767-47B8C25544BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA127836-4CED-47B0-B767-47B8C25544BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50FBB942-C923-49C0-9E9E-A21E74D20340}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50FBB942-C923-49C0-9E9E-A21E74D20340}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50FBB942-C923-49C0-9E9E-A21E74D20340}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50FBB942-C923-49C0-9E9E-A21E74D20340}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7A02584-CBCB-4216-AE6B-70B621DC3C61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7A02584-CBCB-4216-AE6B-70B621DC3C61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7A02584-CBCB-4216-AE6B-70B621DC3C61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7A02584-CBCB-4216-AE6B-70B621DC3C61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6816AECE-27BE-4878-A889-A5E9557456B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6816AECE-27BE-4878-A889-A5E9557456B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6816AECE-27BE-4878-A889-A5E9557456B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6816AECE-27BE-4878-A889-A5E9557456B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38F959AE-5526-4238-AC57-5AD5F638302B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38F959AE-5526-4238-AC57-5AD5F638302B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38F959AE-5526-4238-AC57-5AD5F638302B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38F959AE-5526-4238-AC57-5AD5F638302B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

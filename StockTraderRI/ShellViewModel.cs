@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace StockTraderRI
 {
+    // See Dopamine
     public class ShellViewModel : BindableBase
     {
         private IDialogService dialogService;
