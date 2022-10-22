@@ -1,0 +1,70 @@
+﻿<UserControl
+    x:Class="StockTraderRI.Controls.RoundedBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid Margin="-6,-5,-12,-13">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="27" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="27" />
+            </Grid.RowDefinitions>
+            <Image
+                Width="20"
+                Height="20"
+                Source="../Resources/shadow_tl.png"
+                Stretch="Fill" />
+            <Image
+                Grid.Column="1"
+                Height="20"
+                Source="../Resources/shadow_t.png"
+                Stretch="Fill" />
+            <Image
+                Grid.Column="2"
+                Width="27"
+                Height="20"
+                Source="../Resources/shadow_tr.png"
+                Stretch="Fill" />
+            <Image
+                Grid.Row="1"
+                Grid.Column="2"
+                Width="27"
+                Source="../Resources/shadow_r.png"
+                Stretch="Fill" />
+            <Image
+                Grid.Row="1"
+                Width="20"
+                Source="../Resources/shadow_l.png"
+                Stretch="Fill" />
+            <Image
+                Grid.Row="2"
+                Grid.Column="1"
+                Height="27"
+                Source="../Resources/shadow_b.png"
+                Stretch="Fill" />
+            <Image
+                Grid.Row="2"
+                Width="20"
+                Height="27"
+                Source="../Resources/shadow_bl.png"
+                Stretch="Fill" />
+            <Image
+                Grid.Row="2"
+                Grid.Column="2"
+                Width="27"
+                Height="27"
+                Source="../Resources/shadow_br.png"
+                Stretch="Fill" />
+        </Grid>
+        <Border
+            VerticalAlignment="Stretch"
+            Background="#99FFFFFF"
+            CornerRadius="12,12,12,12"
+            Opacity="0.8" />
+    </Grid>
+</UserControl>
