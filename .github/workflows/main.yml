@@ -25,8 +25,9 @@ jobs:
 
       - name: Dispay some values
         run: |
-          echo ref_type = ${{github.ref_type }}
-          echo workspace= ${{ github.workspace }}
+          ref_type ====> ${{github.ref_type }}
+          workspace====> ${{ github.workspace }}
+          event_name ====> ${{ github.event_name}}
 
       - name: Publish your  package [See Github page (Right)]
         uses: actions/upload-artifact@v3
@@ -35,7 +36,7 @@ jobs:
           path: ${{ github.workspace }}/bin/Publish
           if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
   deploy:
-    if: ${{ github.event_name == 'push' && github.ref_type == 'tag' }}
+    if: ${{ github.event_name == 'push' && github.ref_type == 'branch' }}
     needs: package # Dependent of jobs packages
     runs-on: ubuntu-latest
     steps:
