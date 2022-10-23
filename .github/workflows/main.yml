@@ -25,7 +25,7 @@ jobs:
 
       - name: Dispay some values
         run: |
-          echo ref_type= ${{github.ref_type }}
+          echo ref_type = ${{github.ref_type }}
           echo workspace= ${{ github.workspace }}
 
       - name: Publish your  package [See Github page (Right)]
