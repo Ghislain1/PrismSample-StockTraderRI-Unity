@@ -55,7 +55,7 @@ namespace StockTraderRI.Modules.Position.Services
                 );
             ordersElement.Add(orderElement);
 
-            var resourcesLogOrderSubmitted = "An order has been submitted.Order Details: { 0}";
+            var resourcesLogOrderSubmitted = "An order has been submitted.Order Details: {0}";
             string message = String.Format(CultureInfo.CurrentCulture, resourcesLogOrderSubmitted,
                                            orderElement.ToString());
             //TODO@GhZe: Use Log to log the message
