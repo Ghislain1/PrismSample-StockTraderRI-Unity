@@ -22,13 +22,13 @@ jobs:
           dotnet-version: 6.0.x
 
       - name: Publish (Release Mode)
-        run: dotnet publish StockTraderRI/ -o StockTraderRI/bin/Publish --configuration Release
+        run: dotnet publish StockTraderRI/ -o ${{ github.workspace }}/bin/Publish --configuration Release
 
       - name: Publish your  package [See Github page (Right)]
         uses: actions/upload-artifact@v3
         with:
           name: StockTraderRI
-          path: StockTraderRI/bin/Publish
+          path: ${{ github.workspace }}/bin/Publish
   deploy:
     if: ${{ github.event_name == 'push' && github.ref_type == 'tag' }}
     needs: package # Dependent of jobs packages
