@@ -25,6 +25,7 @@ jobs:
 
       - name: Dispay some values
         run: |
+          echo on 
           ref_type ====> ${{github.ref_type }}
           workspace====> ${{ github.workspace }}
           event_name ====> ${{ github.event_name}}
