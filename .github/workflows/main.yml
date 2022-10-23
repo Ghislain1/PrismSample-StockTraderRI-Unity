@@ -29,6 +29,7 @@ jobs:
         run: |
           echo  "ref_type ====> ${{github.ref_type }}"
           echo  " workspace====> ${{ github.workspace }}"
+          echo  "  github.ref ====> ${{  github.ref}}"
           echo  " event_name ====> ${{ github.event_name}}"
 
       - name: Publish your  package [See Github page (Right)]
@@ -58,12 +59,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
+          tag_name: ${{ github.ref_type }} # How to set  tag name?
+          release_name: ${{ github.ref_type }} # How to set  release name?
           body: |
             [Changelog](https://github.com/Ghislain1/PrismSample-StockTraderRI-Unity/blob/master/CHANGELOG.md)
-          draft: false
-          prerelease: false
+          draft: true # Later to false
+          prerelease: true # Later to false
 
       - name: Upload release asset
         uses: actions/upload-release-asset@v1
