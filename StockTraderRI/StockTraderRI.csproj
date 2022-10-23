@@ -5,6 +5,12 @@
     <Nullable>enable</Nullable>
     <TargetFramework>net6.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <Version>1.0.4</Version>
+    <Nullable>enable</Nullable>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+   <!-- <WarningsAsErrors>nullable</WarningsAsErrors> -->
+    <Company>GhislainOne</Company>
+    <Copyright>Copyright (C) Ghislain Zeus</Copyright>
   </PropertyGroup>
 
  
