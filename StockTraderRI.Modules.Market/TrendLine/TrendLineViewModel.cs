@@ -17,7 +17,7 @@ namespace StockTraderRI.Modules.Market.TrendLine
 
         public TrendLineViewModel(IMarketHistoryService marketHistoryService, IEventAggregator eventAggregator)
         {
-            if (eventAggregator == null)
+            if (eventAggregator is null)
             {
                 throw new ArgumentNullException("eventAggregator");
             }

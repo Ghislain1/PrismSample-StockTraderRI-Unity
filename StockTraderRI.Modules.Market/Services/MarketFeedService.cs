@@ -20,14 +20,14 @@ namespace StockTraderRI.Modules.Market.Services
         private Timer _timer;
         private int _refreshInterval = 10000;
         private readonly object _lockObject = new object();
-        private static string ResourceMarket = @"Data\Market.xml";
+        //private static string ResourceMarket = @"Data\Market.xml";
  
         public MarketFeedService(IEventAggregator eventAggregator)
-            : this(XDocument.Load(ResourceMarket), eventAggregator)
+            : this(XDocument.Load(DataLocationNames.MarketXml), eventAggregator)
         {
         }
 
-        protected MarketFeedService(XDocument document, IEventAggregator eventAggregator)
+        private MarketFeedService(XDocument document, IEventAggregator eventAggregator)
         {
             if (document == null)
             {

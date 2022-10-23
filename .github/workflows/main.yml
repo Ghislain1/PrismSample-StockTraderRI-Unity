@@ -1,0 +1,31 @@
+name: main
+
+on: [push, pull_request] # Trigger when someone pushs or dens PR
+
+# 3 Jobs, packages, deploy, notify
+jobs:
+  package:
+    runs-on: windows-latest
+
+    env:
+      DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+      DOTNET_NOLOGO: true
+      DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install .NET
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 6.0.x
+
+      - name: Publish (Release Mode)
+        run: dotnet publish StockTraderRI/ -o StockTraderRI/bin/Publish --configuration Release
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: StockTraderRI
+          path: StockTraderRI/bin/Publish

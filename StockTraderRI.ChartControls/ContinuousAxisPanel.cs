@@ -84,7 +84,7 @@ namespace StockTraderRI.ChartControls
                 return;
             }
             CalculateValueIncrement(_arrangeSize);
-            
+
             ObservableCollection<String> tempItemsSource = ItemsSource;
             tempItemsSource.Clear();
             int referenceLinesCreated = 0;
@@ -210,7 +210,7 @@ namespace StockTraderRI.ChartControls
             double end_height = start_height - (InternalChildren.Count - 1) * increments;
             ObservableCollection<double> tempTickPositions = TickPositions;
 
-            if(start_height > end_height)
+            if (start_height > end_height)
             {
                 tempTickPositions.Clear();
                 Rect r = new Rect(constraint.Width - rectWidth, (start_height - rectHeight / 2), rectWidth, rectHeight);
@@ -231,11 +231,11 @@ namespace StockTraderRI.ChartControls
                     {
                         _canDisplayAllLabels = false;
                     }
-                    
+
                     for (int i = 2; i <= InternalChildren.Count-1; i++)
                     {
                         tempTickPositions.Add(start_height - (i - 1) * increments);
-                        if (_canDisplayAllLabels || (i + 1) % _skipFactor == 0 )
+                        if (_canDisplayAllLabels || (i + 1) % _skipFactor == 0)
                         {
                             r = new Rect(constraint.Width - rectWidth, (start_height - (i - 1) * increments - rectHeight / 2), rectWidth, rectHeight);
                             InternalChildren[i - 1].Arrange(r);
@@ -310,7 +310,7 @@ namespace StockTraderRI.ChartControls
         /// <returns></returns>
         private double CalculatePixelIncrements(Size constraint, Size labelSize)
         {
-            if(Orientation.Equals(Orientation.Vertical))
+            if (Orientation.Equals(Orientation.Vertical))
                 return (constraint.Height - _largestLabelSize.Height) / (_numReferenceLines - 1);
             else
                 return (constraint.Width - _largestLabelSize.Width) / (_numReferenceLines - 1);
@@ -549,15 +549,15 @@ namespace StockTraderRI.ChartControls
         private int IsWithinRange(double numerator, int exponent, Size size)
         {
             int highRange, lowRange;
-           // highRange = (int)Math.Min(10, (int)(size.Height / labelSize.Height)) -2;
-            if(Orientation.Equals(Orientation.Vertical))
+            // highRange = (int)Math.Min(10, (int)(size.Height / labelSize.Height)) -2;
+            if (Orientation.Equals(Orientation.Vertical))
                 highRange = (int)(size.Height / ReferenceLineSeperation);
             else
                 highRange = (int)(size.Width / ReferenceLineSeperation);
 
             lowRange = 1;
             highRange = (int)Math.Max(highRange, 3);
-            
+
             if ((Math.Abs(numerator) / (1 * Math.Pow(10, exponent))) >= lowRange && (Math.Abs(numerator) / (1 * Math.Pow(10, exponent))) <= highRange)
             {
                 return 1;
@@ -596,7 +596,7 @@ namespace StockTraderRI.ChartControls
             DependencyProperty.RegisterReadOnly("ItemsSource", typeof(ObservableCollection<String>), typeof(ContinuousAxisPanel), new UIPropertyMetadata());
 
         public static readonly DependencyProperty ItemsSourceProperty = ItemsSourceKey.DependencyProperty;
-        
+
 
         private ObservableCollection<double> DataValues
         {

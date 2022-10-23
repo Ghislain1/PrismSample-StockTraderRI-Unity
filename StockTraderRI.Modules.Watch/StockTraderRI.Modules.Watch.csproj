@@ -6,6 +6,13 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+
+  <ItemGroup>
+    <ProjectReference Include="..\StockTraderRI.ChartControls\StockTraderRI.ChartControls.csproj" />
+    <ProjectReference Include="..\StockTraderRI.Infrastructure\StockTraderRI.Infrastructure.csproj" />
+  </ItemGroup>
+
+
   <ItemGroup>
     <PackageReference Include="Prism.Wpf" Version="8.1.97" />
   </ItemGroup>
