@@ -29,11 +29,11 @@ jobs:
         with:
           name: StockTraderRI
           path: ${{ github.workspace }}/bin/Publish
+          if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
   deploy:
     if: ${{ github.event_name == 'push' && github.ref_type == 'tag' }}
     needs: package # Dependent of jobs packages
     runs-on: ubuntu-latest
-
     steps:
       - name: Download artifacts
         uses: actions/download-artifact@v3
