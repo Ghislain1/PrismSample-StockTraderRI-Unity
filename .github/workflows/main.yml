@@ -23,12 +23,13 @@ jobs:
       - name: Publish (Release Mode)
         run: dotnet publish StockTraderRI/ -o ${{ github.workspace }}/bin/Publish --configuration Release
 
+      - name: Print All Value  from Github
+        run: echo "$GITHUB_CONTEXT"
       - name: Dispay some values
         run: |
-          echo on 
-          ref_type ====> ${{github.ref_type }}
-          workspace====> ${{ github.workspace }}
-          event_name ====> ${{ github.event_name}}
+          echo  "ref_type ====> ${{github.ref_type }}"
+          echo  " workspace====> ${{ github.workspace }}"
+          echo  " event_name ====> ${{ github.event_name}}"
 
       - name: Publish your  package [See Github page (Right)]
         uses: actions/upload-artifact@v3
