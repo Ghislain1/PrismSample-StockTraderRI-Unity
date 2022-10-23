@@ -15,13 +15,4 @@
     <ProjectReference Include="..\StockTraderRI.Infrastructure\StockTraderRI.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="Data\Market.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Data\MarketHistory.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>
