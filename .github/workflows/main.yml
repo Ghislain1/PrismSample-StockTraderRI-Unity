@@ -24,8 +24,46 @@ jobs:
       - name: Publish (Release Mode)
         run: dotnet publish StockTraderRI/ -o StockTraderRI/bin/Publish --configuration Release
 
-      - name: Upload artifacts
+      - name: Publish your  package [See Github page (Right)]
         uses: actions/upload-artifact@v3
         with:
           name: StockTraderRI
           path: StockTraderRI/bin/Publish
+  deploy:
+    if: ${{ github.event_name == 'push' && github.ref_type == 'tag' }}
+    needs: package # Dependent of jobs packages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: StockTraderRI
+          path: StockTraderRI
+
+      - name: Create package
+        run: Compress-Archive -Path StockTraderRI/* -DestinationPath StockTraderRI.zip -Force
+        shell: pwsh
+
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          body: |
+            [Changelog](https://github.com/Ghislain1/StockTraderRI/blob/master/Changelog.md)
+          draft: false
+          prerelease: false
+
+      - name: Upload release asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_name: StockTraderRI.zip
+          asset_path: StockTraderRI.zip
+          asset_content_type: application/zip
