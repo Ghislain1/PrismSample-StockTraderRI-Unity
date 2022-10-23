@@ -6,7 +6,6 @@ on: [push, pull_request] # Trigger when someone pushs or dens PR
 jobs:
   package:
     runs-on: windows-latest
-
     env:
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
       DOTNET_NOLOGO: true
@@ -24,6 +23,11 @@ jobs:
       - name: Publish (Release Mode)
         run: dotnet publish StockTraderRI/ -o ${{ github.workspace }}/bin/Publish --configuration Release
 
+      - name: Dispay some values
+        run: |
+          echo ref_type= ${{github.ref_type }}
+          echo workspace= ${{ github.workspace }}
+
       - name: Publish your  package [See Github page (Right)]
         uses: actions/upload-artifact@v3
         with:
@@ -31,6 +35,7 @@ jobs:
           path: ${{ github.workspace }}/bin/Publish
           if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
   deploy:
+    if: ${{ github.event_name == 'push' && github.ref_type == 'tag' }}
     needs: package # Dependent of jobs packages
     runs-on: ubuntu-latest
     steps:
