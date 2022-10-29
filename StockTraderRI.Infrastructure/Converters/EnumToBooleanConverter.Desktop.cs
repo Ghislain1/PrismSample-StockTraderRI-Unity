@@ -26,6 +26,7 @@ namespace StockTraderRI.Infrastructure.Converters
             
             return null;
         }
+        
         #endregion
     }
 }

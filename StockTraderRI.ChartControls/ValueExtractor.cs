@@ -18,7 +18,11 @@ namespace StockTraderRI.ChartControls
 
         private static void OnValuePathChanged(DependencyObject sender, DependencyPropertyChangedEventArgs args)
         {
-            ValueExtractor v = sender as ValueExtractor;
+            if (sender is not ValueExtractor v)
+            {
+                throw new ArgumentException(nameof(sender));
+            }
+
             if (v != null && v.ValuePath != null && v.Items != null)
             {
                 v.GenerateValueList();
@@ -27,17 +31,27 @@ namespace StockTraderRI.ChartControls
 
         private static void OnItemsChanged(DependencyObject sender, DependencyPropertyChangedEventArgs args)
         {
-            ValueExtractor v = sender as ValueExtractor;
-            ItemCollection oldItems = args.OldValue as ItemCollection;
-            ItemCollection newItems = args.NewValue as ItemCollection;
-            if (oldItems != null)
-                ((INotifyCollectionChanged)oldItems).CollectionChanged -= new NotifyCollectionChangedEventHandler(v.OnItemsCollectionChanged);
-                
-            if (v != null && v.Items != null)
+            if(sender is  not  ValueExtractor v )
             {
-                ((INotifyCollectionChanged)v.Items).CollectionChanged += new NotifyCollectionChangedEventHandler(v.OnItemsCollectionChanged);
-                 if(v.ValuePath!=null)
+                throw new ArgumentException(nameof(sender));
+            }
+           // ValueExtractor v = sender as ValueExtractor;
+           // ItemCollection oldItems = args.OldValue as ItemCollection;
+            ItemCollection newItems = args.NewValue as ItemCollection;
+            if (args.OldValue is INotifyCollectionChanged oldItems)
+            { 
+                oldItems.CollectionChanged -= new NotifyCollectionChangedEventHandler(v.OnItemsCollectionChanged); 
+            }
+                
+            if ( v.Items is INotifyCollectionChanged vItems)
+            {
+                vItems.CollectionChanged += new NotifyCollectionChangedEventHandler(v.OnItemsCollectionChanged);
+                if (v.ValuePath is not null)
+                {
                     v.GenerateValueList();
+
+                }
+                   
             }
         }
 

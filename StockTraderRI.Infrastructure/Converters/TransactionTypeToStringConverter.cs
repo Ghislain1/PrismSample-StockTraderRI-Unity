@@ -6,7 +6,7 @@ namespace StockTraderRI.Infrastructure.Converters
 {
     public class TransactionTypeToStringConverter : IValueConverter
     {
-        #region IValueConverter Members
+         
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -24,6 +24,6 @@ namespace StockTraderRI.Infrastructure.Converters
             throw new System.NotImplementedException();
         }
 
-        #endregion
+   
     }
 }

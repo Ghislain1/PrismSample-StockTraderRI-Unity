@@ -4,7 +4,7 @@
 
 This is a WPF Prism sample for StockTrader Reference Implementation. Originally it was created with MEF. This version recreates it with Unity DI and .Net 6.0
 
-Original from [here]()
+Original from [here](https://github.com/mjeson/PrismSample-StockTraderRI-Unity)
 # Pics
 ![Pc3s](assets/pic3.jpg)
 ![Pc2s](assets/pic2.jpg)

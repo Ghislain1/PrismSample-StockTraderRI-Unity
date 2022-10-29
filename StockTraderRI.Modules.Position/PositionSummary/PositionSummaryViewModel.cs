@@ -25,9 +25,7 @@ namespace StockTraderRI.Modules.Position.PositionSummary
             this.Position = observablePosition;
 
             BuyCommand = ordersController.BuyCommand;
-            SellCommand = ordersController.SellCommand;
-
-            this.CurrentPositionSummaryItem = new PositionSummaryItem("FAKEINDEX", 0, 0, 0);
+            SellCommand = ordersController.SellCommand;            
         }
 
         public ICommand AddToWatchCommand { get; private set; }
