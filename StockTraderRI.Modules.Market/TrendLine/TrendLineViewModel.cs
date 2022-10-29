@@ -48,14 +48,9 @@ namespace StockTraderRI.Modules.Market.TrendLine
 
         public MarketHistoryCollection HistoryCollection
         {
-            get
-            {
-                return historyCollection;
-            }
-            private set
-            {
-                SetProperty(ref this.historyCollection, value);
-            }
+            get =>        historyCollection;
+            private set => SetProperty(ref this.historyCollection, value);
+
         }
     }
 }
