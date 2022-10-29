@@ -17,7 +17,7 @@ namespace StockTraderRI.Modules.Position
         public void OnInitialized(IContainerProvider containerProvider)
         {
             var regionManager = containerProvider.Resolve<IRegionManager>();
-            var view = containerProvider.Resolve<PositionSummaryView>();
+        
             regionManager.RegisterViewWithRegion(RegionNames.MainRegion,
                                                         () => containerProvider.Resolve<PositionSummaryView>());
             var _ordersController = containerProvider.Resolve<OrdersController>();

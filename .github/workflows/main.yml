@@ -59,8 +59,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref_type }} # How to set  tag name?
-          release_name: ${{ github.ref_type }} # How to set  release name?
+          tag_name: ${{ github.ref }} # How to set  tag name?
+          release_name: ${{ github.ref }} # How to set  release name?
           body: |
             [Changelog](https://github.com/Ghislain1/PrismSample-StockTraderRI-Unity/blob/master/CHANGELOG.md)
           draft: true # Later to false

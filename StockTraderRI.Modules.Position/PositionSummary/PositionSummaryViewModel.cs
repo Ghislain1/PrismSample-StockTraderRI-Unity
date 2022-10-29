@@ -15,10 +15,11 @@ namespace StockTraderRI.Modules.Position.PositionSummary
 
         public PositionSummaryViewModel(IOrdersController ordersController, IEventAggregator eventAggregator, IObservablePosition observablePosition)
         {
-            if (ordersController == null)
+            if (ordersController is null)
             {
                 throw new ArgumentNullException("ordersController");
             }
+      
 
             this.eventAggregator = eventAggregator;
             this.Position = observablePosition;
@@ -48,11 +49,8 @@ namespace StockTraderRI.Modules.Position.PositionSummary
             }
         }
 
-        public string HeaderInfo
-        {
-            get { return "POSITION"; }
-        }
-
+        public string HeaderInfo => "POSITION"; 
+        
         public IObservablePosition Position { get; private set; }
         public ICommand SellCommand { get; private set; }
     }

@@ -32,7 +32,7 @@ namespace StockTraderRI.Modules.Position.PositionSummary
 
             PopulateItems();
 
-            this.accountPositionService.Updated += PositionSummaryItems_Updated;
+            this.accountPositionService.Updated += this.PositionSummaryItems_Updated;
         }
 
         public void MarketPricesUpdated(IDictionary<string, decimal> tickerSymbolsPrice)
@@ -65,14 +65,11 @@ namespace StockTraderRI.Modules.Position.PositionSummary
             }
         }
 
-        private void PopulateItems()
-        {
-            PositionSummaryItem positionSummaryItem;
-            foreach (AccountPosition accountPosition in this.accountPositionService.GetAccountPositions())
-            {
-                positionSummaryItem = new PositionSummaryItem(accountPosition.TickerSymbol, accountPosition.CostBasis, accountPosition.Shares, this.marketFeedService.GetPrice(accountPosition.TickerSymbol));
-                this.Items.Add(positionSummaryItem);
-            }
+        private async void PopulateItems()
+        {           
+           var items= await this.accountPositionService.GetAccountPositionsAsync();
+            items.ToList().ForEach(accountPosition => this.Items.Add(new PositionSummaryItem(accountPosition.TickerSymbol, accountPosition.CostBasis, accountPosition.Shares, this.marketFeedService.GetPrice(accountPosition.TickerSymbol))));
+          
         }
     }
 }

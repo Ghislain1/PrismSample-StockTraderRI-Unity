@@ -14,7 +14,7 @@ namespace StockTraderRI.Infrastructure.Models
         {
             if (list == null)
             {
-                throw new ArgumentNullException("list");
+                throw new ArgumentNullException(nameof(list));
             }
 
             foreach (MarketHistoryItem marketHistoryItem in list)
