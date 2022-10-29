@@ -6,6 +6,7 @@ using System.Windows;
 
 namespace StockTraderRI.ChartControls
 {
+    // Connection beetween Title and his TitleTemplate?
     public class Chart : ItemsControl
     {
         protected override bool IsItemItsOwnContainerOverride(object item)
@@ -25,8 +26,7 @@ namespace StockTraderRI.ChartControls
         }
 
         // Using a DependencyProperty as the backing store for Title.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty TitleProperty =
-            DependencyProperty.Register("Title", typeof(object), typeof(Chart), new UIPropertyMetadata(null));
+        public static readonly DependencyProperty TitleProperty = DependencyProperty.Register(nameof(Title) , typeof(object), typeof(Chart), new UIPropertyMetadata(null));
 
         public DataTemplate TitleTemplate
         {

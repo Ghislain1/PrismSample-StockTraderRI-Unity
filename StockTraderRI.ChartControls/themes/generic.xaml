@@ -59,7 +59,7 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}">
-                        <Grid>
+                        <Grid >
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition />
@@ -68,7 +68,7 @@
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
                             <ContentPresenter HorizontalAlignment="Center" ContentSource="Title" />
-                            <Grid Grid.Row="1">
+                            <Grid ShowGridLines="False" Grid.Row="1">
                                 <Grid.RowDefinitions>
                                     <RowDefinition />
                                     <RowDefinition Height="Auto" />
